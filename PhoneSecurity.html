@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Phone Security Scan</title>
+<style>
+body {
+    background: black;
+    color: #00ff00;
+    font-family: monospace;
+    padding: 30px;
+    text-align: center;
+}
+h1 { color: red; }
+#screen {
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 2;
+}
+button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>⚠️ PHONE SECURITY ALERT ⚠️</h1>
+
+<div id="screen">Starting security scan...</div>
+
+<script>
+let messages = [
+    "Connecting to phone...",
+    "Scanning system...",
+    "Checking files...",
+    "Scanning messages...",
+    "Scanning photos...",
+    "Checking passwords...",
+    "Access detected...",
+    "⚠️ SECURITY BREACH DETECTED ⚠️",
+    "Downloading secret files...",
+    "99% COMPLETE..."
+];
+
+let i = 0;
+
+function scan() {
+    if (i < messages.length) {
+        document.getElementById("screen").innerHTML +=
+        "<br>" + messages[i];
+        i++;
+        setTimeout(scan, 900);
+    } else {
+        document.getElementById("screen").innerHTML +=
+        "<br><br><h2>😂 GOT YOU! THIS WAS JUST A PRANK!</h2>";
+    }
+}
+
+setTimeout(scan, 1000);
+</script>
+
+</body>
+</html>
